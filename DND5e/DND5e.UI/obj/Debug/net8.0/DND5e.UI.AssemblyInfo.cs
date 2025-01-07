@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DND5e.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8751963e1f0661330605c316e99a4b74d74f718c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DND5e.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DND5e.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

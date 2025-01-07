@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="e51fd417-347e-4cef-8fdc-9dbff6b121be" ChangeDateTime="01/07/2025 20:36:44">
+    <Property Name="ElementName" Value="[dbo].[tblAbilityScore].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblAbilityScore]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CharacterId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a4f41aca-7ca9-4955-834a-831deb348c91" ChangeDateTime="01/07/2025 20:44:09">
+    <Property Name="ElementName" Value="[dbo].[tblCharacter].[Av]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblCharacter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Ac" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="79d87f13-7666-4712-a709-a52a93009706" ChangeDateTime="01/07/2025 20:48:38">
+    <Property Name="ElementName" Value="[dbo].[tblPersonality].[id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblPersonality]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="256f954e-39a8-4850-b7ab-214a860a7cf0" ChangeDateTime="01/07/2025 20:50:00">
+    <Property Name="ElementName" Value="[dbo].[tblSave].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSave]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CharacterId" />
+  </Operation>
+</Operations>
