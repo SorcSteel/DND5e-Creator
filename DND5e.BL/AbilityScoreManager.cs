@@ -2,7 +2,7 @@
 
 namespace DND5e.BL
 {
-    public class AbilityScoreManager
+    public class AbilityScoreManager : GenericManager<tblAbilityScore>
     {
 
         public AbilityScoreManager(DbContextOptions<DND5eEntities> options) : base(options) { }
