@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DND5e.PL.Entities
 {
-    internal class tblUser
+    public class tblUser
     {
         public int Id { get; set; }
         public string UserName { get; set; }
