@@ -10,6 +10,7 @@ namespace DND5e.BL.Models
     {
         public int Id { get; set; }
         public int CharacterId { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
     }
 }
