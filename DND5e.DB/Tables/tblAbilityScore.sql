@@ -1,6 +1,7 @@
 ﻿CREATE TABLE tblAbilityScore
 (
- [CharacterId] INT NOT NULL PRIMARY KEY, 
+    [Id] INT NOT NULL PRIMARY KEY,
+    [CharacterId] INT NOT NULL, 
     [Str] INT NULL, 
     [Dex] INT NULL, 
     [Con] INT NULL, 

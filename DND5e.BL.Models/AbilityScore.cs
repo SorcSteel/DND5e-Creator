@@ -8,6 +8,7 @@ namespace DND5e.BL.Models
 {
     public class AbilityScore
     {
+        public int Id { get; set; }
         public int CharacterId { get; set; }
         public int Str { get; set; }
         public int Dex { get; set; }

@@ -8,6 +8,7 @@ namespace DND5e.BL.Models
 {
     public class Save
     {
+        public int Id { get; set; }
         public int CharacterId { get; set; }
         public bool Str { get; set; } 
         public bool Dex { get; set; }

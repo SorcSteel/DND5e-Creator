@@ -8,6 +8,7 @@ namespace DND5e.PL.Entities
 {
     public class tblAbilityScore
     {
+        public int Id { get; set; }
         public int CharacterId { get; set; }
         public int Str { get; set; }
         public int Dex { get; set; }

@@ -1,6 +1,7 @@
 ﻿CREATE TABLE tblSave
 (
-	[CharacterId] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY, 
+	[CharacterId] INT NOT NULL, 
     [Str] BIT NULL, 
     [Dex] BIT NULL, 
     [Con] BIT NULL, 

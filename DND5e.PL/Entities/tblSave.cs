@@ -8,6 +8,7 @@ namespace DND5e.PL.Entities
 {
     public class tblSave
     {
+        public int Id { get; set; }
         public int CharacterId { get; set; }
         public bool Str { get; set; }
         public bool Dex { get; set; }

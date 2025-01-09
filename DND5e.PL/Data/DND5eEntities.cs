@@ -1,5 +1,8 @@
 ﻿using DND5e.PL.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 
 namespace DND5e.PL.Data
@@ -31,18 +34,17 @@ namespace DND5e.PL.Data
 
             CreateUsers(modelBuilder);
         }
+
         private void CreateUsers(ModelBuilder modelBuilder)
         {
 
-
             modelBuilder.Entity<tblUser>(entity =>
             {
-
                 entity.HasKey(e => e.Id).HasName("PK_tblUser_Id");
 
                 entity.ToTable("tblUser");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id);
                 entity.Property(e => e.UserName);
                 entity.Property(e => e.FirstName);
                 entity.Property(e => e.LastName);
@@ -51,12 +53,16 @@ namespace DND5e.PL.Data
                 entity.Property(e => e.Role);
             });
 
-            List<tblUser> Users = new List<tblUser>
+            modelBuilder.Entity<tblUser>().HasData(new tblUser
             {
-                new tblUser {Id = 1, UserName = "testuser1", FirstName = "Logan", LastName = "Test", Password = GetHash("password"), Email = "lpvang@gmail.com"},
-
-            };
-            modelBuilder.Entity<tblUser>().HasData(Users);
+                Id = -1,
+                UserName = "testuser1",
+                FirstName = "Logan",
+                LastName = "Test",
+                Password = GetHash("password"),
+                Email = "lpvang@gmail.com",
+                Role = "Admin"
+            });
         }
         private static string GetHash(string Password)
         {
@@ -66,5 +72,6 @@ namespace DND5e.PL.Data
                 return Convert.ToBase64String(hasher.ComputeHash(hashbytes));
             }
         }
+
     }
 }

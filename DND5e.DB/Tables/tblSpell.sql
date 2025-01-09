@@ -1,6 +1,7 @@
 ﻿CREATE TABLE tblSpell
 (
-	[CharacterId] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY, 
+	[CharacterId] INT NOT NULL, 
     [First] INT NULL, 
     [Second] INT NULL, 
     [Third] INT NULL, 
