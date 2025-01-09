@@ -1,0 +1,10 @@
+﻿CREATE TABLE tblUser
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [UserName] VARCHAR(255) NOT NULL, 
+    [FirstName] VARCHAR(255) NOT NULL, 
+    [LastName] VARCHAR(255) NULL, 
+    [Password] VARCHAR(255) NOT NULL, 
+    [Email] VARCHAR(255) NOT NULL, 
+    [Role] VARCHAR(50) NOT NULL
+)
