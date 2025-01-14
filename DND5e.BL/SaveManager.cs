@@ -2,26 +2,27 @@
 
 namespace DND5e.BL
 {
-    public class AbilityScoreManager : GenericManager<tblAbilityScore>
+    public class SaveManager : GenericManager<tblSave>
     {
 
-        public AbilityScoreManager(DbContextOptions<DND5eEntities> options) : base(options) { }
+        public SaveManager(DbContextOptions<DND5eEntities> options) : base(options) { }
 
-        public int Insert(AbilityScore abilityScore, bool rollback = false)
+        public int Insert(Save save, bool rollback = false)
         {
             try
             {
-                tblAbilityScore row = new tblAbilityScore 
+                tblSave row = new tblSave 
                 { 
-                    CharacterId = abilityScore.CharacterId,
-                    Str = abilityScore.Str,
-                    Dex = abilityScore.Dex,
-                    Con = abilityScore.Con,
-                    Int = abilityScore.Int,
-                    Wis = abilityScore.Wis,
-                    Cha = abilityScore.Cha
+                    CharacterId = save.CharacterId,
+                    Str = save.Str,
+                    Dex = save.Dex,
+                    Con = save.Con,
+                    Int = save.Int,
+                    Wis = save.Wis,
+                    Cha = save.Cha
+
                 };
-                abilityScore.Id = row.Id;
+                save.Id = row.Id;
                 return base.Insert(row, rollback);
 
             }
@@ -32,15 +33,15 @@ namespace DND5e.BL
             }
         }
 
-        public List<AbilityScore> Load()
+        public List<Save> Load()
         {
 
             try
             {
-                List<AbilityScore> rows = new List<AbilityScore>();
+                List<Save> rows = new List<Save>();
                 base.Load()
                     .ForEach(d => rows.Add(
-                        new AbilityScore
+                        new Save
                         {
                             Id = d.Id,
                             CharacterId = d.CharacterId,
@@ -63,15 +64,15 @@ namespace DND5e.BL
 
         }
 
-        public AbilityScore LoadById(int id)
+        public Save LoadById(int id)
         {
             try
             {
-                tblAbilityScore row = base.LoadById(id);
+                tblSave row = base.LoadById(id);
 
                 if (row != null)
                 {
-                    AbilityScore abilityScore = new AbilityScore
+                    Save save = new Save
                     {
                         Id = row.Id,
                         CharacterId = row.CharacterId,
@@ -83,7 +84,7 @@ namespace DND5e.BL
                         Cha = row.Cha
                     };
 
-                    return abilityScore;
+                    return save;
                 }
                 else
                 {
@@ -98,20 +99,21 @@ namespace DND5e.BL
             }
         }
 
-        public int Update(AbilityScore abilityScore, bool rollback = false)
+        public int Update(Save save, bool rollback = false)
         {
             try
             {
-                int results = base.Update(new tblAbilityScore
+                int results = base.Update(new tblSave
                 {
-                    Id = abilityScore.Id,
-                    CharacterId = abilityScore.CharacterId,
-                    Str = abilityScore.Str,
-                    Dex = abilityScore.Dex,
-                    Con = abilityScore.Con,
-                    Int = abilityScore.Int,
-                    Wis = abilityScore.Wis,
-                    Cha = abilityScore.Cha
+                    Id = save.Id,
+                    CharacterId = save.CharacterId,
+                    Str = save.Str,
+                    Dex = save.Dex,
+                    Con = save.Con,
+                    Int = save.Int,
+                    Wis = save.Wis,
+                    Cha = save.Cha
+
                 }, rollback);
                 return results;
             }

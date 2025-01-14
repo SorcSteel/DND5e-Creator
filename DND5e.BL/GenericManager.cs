@@ -117,7 +117,7 @@ namespace DND5e.BL
                         IDbContextTransaction dbTransaction = null;
                         if (rollback) dbTransaction = dc.Database.BeginTransaction();
 
-                        entity.Id = Guid.NewGuid();
+                        entity.Id = dc.Set<T>().LastOrDefault().Id + 1;
 
                         dc.Set<T>().Add(entity);
                         results = dc.SaveChanges();
@@ -155,7 +155,7 @@ namespace DND5e.BL
                         IDbContextTransaction dbTransaction = null;
                         if (rollback) dbTransaction = dc.Database.BeginTransaction();
 
-                        entity.Id = Guid.NewGuid();
+                        entity.Id = dc.Set<T>().LastOrDefault().Id + 1;
 
                         dc.Set<T>().Add(entity);
                         results = dc.SaveChanges();
@@ -191,7 +191,7 @@ namespace DND5e.BL
                     IDbContextTransaction dbTransaction = null;
                     if (rollback) dbTransaction = dc.Database.BeginTransaction();
 
-                    entity.Id = Guid.NewGuid();
+                    entity.Id = dc.Set<T>().LastOrDefault().Id + 1;
 
                     dc.Set<T>().Add(entity);
                     results = dc.SaveChanges();
@@ -235,7 +235,7 @@ namespace DND5e.BL
                 throw;
             }
         }
-        public int Delete(Guid id, bool rollback = false)
+        public int Delete(int id, bool rollback = false)
         {
             try
             {
